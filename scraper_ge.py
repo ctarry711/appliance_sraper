@@ -38,11 +38,10 @@ while looping_through_pages == True:
     for result in results:
       product_url = result.a['href']
       product_img_url = 'https://www.geappliances.ca' + result.img['src']
-      product_code = result.img['src']
       product_id = result.find("div", class_="field sku field--type-string field--label-visually_hidden").text
       product_name = result.find("div", class_="field title field--type-string field--label-visually_hidden").contents[3].text
       product_price = result.article.contents[5].contents[1].div.contents[0].strip()
-      product = {"product_url": product_url, "product_img_url": product_img_url, "product_code": product_code, "product_id": product_id, "product_name": product_name, "product_price": product_price}
+      product = {"product_name": product_name, "product_id": product_id, "product_price": product_price, "product_url": product_url, "product_img_url": product_img_url}
       product_data.append(product)
 
     page_count += 1
