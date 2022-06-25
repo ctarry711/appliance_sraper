@@ -33,5 +33,5 @@ data_index_start = script_with_data.find("var FilterItems = ") + len("var Filter
 data_index_end = script_with_data.find("}]}]") + len("}]}]")
 data = script_with_data[data_index_start:data_index_end]
 
-with open('data.json', 'w') as outfile:
+with open('frigidair_data.json', 'w') as outfile:
     outfile.write(data)
